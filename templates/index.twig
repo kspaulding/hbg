@@ -1,0 +1,17 @@
+{% extends '_layout/site' %}
+
+{% set bodyClass = 'page-home' %}
+
+{% block content %}
+{% set entry =craft.entries.section('homepage').one() %}
+    
+    {% cache globally using key 'home' %}
+    
+      {% include '_partials/sections/banner' %}
+
+      {% for block in entry.pageContent.all() %}
+        {% include '_partials/blocks/' ~ block.type ignore missing %}
+      {% endfor %}
+
+    {% endcache %}
+{% endblock %}
