@@ -1,69 +1,253 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      {% if entry is defined %}
-        <title>{% if entry.metaTitle %} {{ entry.metaTitle }} | {% elseif entry.title %} {{ entry.title }} | {% endif %} {{ siteName }} </title>
-        {% if entry.metaDescription %}<meta name="description" content="{{ entry.metaDescription }}">
-        {% endif %}
-        {% if entry.metaKeywords %}<meta name="keywords" content="{{ entry.metaKeywords }}">{% endif %}
-      {% else %}
-        <title>{% if title is defined %} {{ title }} | {% endif %} {{ siteName }} </title>
-      {% endif %}
-      <link rel="shortcut icon" type="img/favicon.ico" href="{{ siteUrl }}/favicon.ico"/>
-      {% do view.registerCssFile('/assets/css/app.css') %}
-      {% do view.registerCssFile('/assets/foundation-icons/foundation-icons.css') %}
-      {% do view.registerCssFile('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css') %}
-      {% do view.registerCssFile('https://fonts.googleapis.com/css?family=Lora:400i') %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBG Steel, LLC | Design. Manufacture. Build.</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.css">
     
   </head>
-  <body {% if bodyClass is defined and bodyClass|length %} class="{{ bodyClass }}" {% endif %}>
-
-    {% include '_includes/header' %}
-    <div id="mainContent">
-      {% block content %}{% endblock %}
-      {% include '_includes/footer' %}
-    </div> <!-- /#mainContent -->
-
-    {% do view.registerJsFile('/assets/node_modules/jquery/dist/jquery.js') %}
-    {% do view.registerJsFile('/assets/node_modules/what-input/dist/what-input.js') %}
-    {% do view.registerJsFile('/assets/node_modules/foundation-sites/dist/js/foundation.js') %}
-    {% do view.registerJsFile('/assets/js/min/app-min.js') %}
-    {% do view.registerJsFile('/assets/js/min/slick.min.js') %}
-    {% do view.registerJsFile('/assets/js/min/jquery.waypoints.min.js') %}
-    {% do view.registerJsFile('/assets/js/waypoints.js') %}
+  <body id="top">
     
-    {% js %}
-      $('.slick-news').slick({
-        centerMode: true,
-        centerPadding: '160px',
-        slidesToShow: 1,
-        accessibility: true,
-        arrows: true,
-        dots: true,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: true,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: true,
-              centerMode: true,
-              centerPadding: '20px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    {% endjs %}
+    <header data-sticky-container id="main">
+      <div class="sticky" data-sticky data-sticky-on="small" data-margin-top="0">
+        <div class="top-bar" >
+          <div class="top-bar-left" data-smooth-scroll>
+            <a href="#top"><img src="/assets/img/logo-hbg.svg" alt="HBG Steel Logo" class="logo"></a>
+            <div class="menu-icon-wrap" data-responsive-toggle="example-menu" data-hide-for="medium" >
+              <div class="title-bar-title">Menu</div>
+              <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+            </div>
+          </div>
+          <div class="top-bar-right align-bottom" >
+            <ul class="menu" id="example-menu" data-animate="fade-in fade-out" data-smooth-scroll>
+              <!--<li><a href="#about" title="About Us">About</a></li>-->
+              <li><a href="#services" title="Services">Services</a></li>
+              <li><a href="#projects" title="Projects">Projects</a></li>
+              <li><a href="#news" title="News">News</a></li>
+              <li><a href="#contact" title="Contact Us">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="hero">
+      
+      <div class="owl-carousel hero-carousel" role="region" aria-label="Design. Manufacture. Build.">
+        <div>
+          <img class="owl-image" src="/assets/img/hero-1.jpg" alt="Design">
+          <div class="overlay"></div>
+          <div class="owl-caption">
+            <h3>Hope on Alvarado</h3>
+            <h4>Los Angeles, CA</h4>
+          </div>
+          <h1>Design</h1>
+        </div>
+        <div>
+          <img class="owl-image" src="/assets/img/hero-2.jpg" alt="Manuacture">
+          <div class="overlay"></div>          
+          <h1>Manufacture</h1>
+        </div>
+        <div>          
+          <img class="owl-image" src="/assets/img/hero-3.jpg" alt="Build">
+          <div class="item-video">
+            <video src="/assets/img/build.m4v" width="100%" height="auto" poster="/assets/img/hero-3.jpg" loop muted autoplay></video>
+          </div>
+          <div class="overlay"></div>
+           <h1>Build</h1>
+        </div>
+      </div>
+            
+    </section>
+    
+    <section id="services">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x align-center">
+          <div class="cell medium-10 large-8 medium-offset-1 large-offset-2">
+            <p class="lead text-center"><strong>HBG is a “Design-Manufacture-Build Firm.” We offer these three services as an all-inclusive, turnkey package for developers, or can customize services to match needs as well.</strong></p>
+          </div>
+          <div class="cell text-center section-title">
+            <h2>Services<h2>
+          </div>
+        </div>
+        <div class="grid-x grid-padding-x steps-cells" data-equalizer data-equalize-on="large">
+          <div class="cell large-4">
+            <div class="step-wrap">
+              <div class="step step-1 text-center">
+                <div class="stat">1</div>
+                <h2>Design</h2>
+                <div class="icon">
+                  <img src="/assets/img/ico-design.png" width="75" height="50">
+                </div>
+              </div>
+              <p data-equalizer-watch>
+                Our Pre-Construction services include the development of all architectural and engineering drawings, using our ASTM structural-steel system. This guarantees the most cost-effective and intuitive installation of a project. HBG can also re-adapt existing plans or become the lead-consultant to ensure designs can make the most of modular.
+              </p>
+            </div>
+          </div>
+          <div class="cell large-4">
+            <div class="step-wrap">
+              <div class="step step-2 text-center">
+                <div class="stat">2</div>
+                <h2>Manufacture</h2>
+                <div class="icon">
+                  <img src="/assets/img/ico-manufacture.png" width="50" height="50">
+                </div>
+              </div>
+              <p data-equalizer-watch>
+                In our massive HCD-Approved overseas factory, buildings are constructed under the scrutiny of US state inspectors and quality control. Buildings are then shipped over the sea and to the site, where HBG or another general contractor will crane the modules into place. The factory schedule is optimized for speed without sacrificing quality, producing precise structures down to fractions of an inch.
+              </p>
+            </div>
+          </div>
+          <div class="cell large-4">
+            <div class="step-wrap">
+              <div class="step step-3 text-center">
+                <div class="stat">3</div>
+                <h2>Build</h2>
+                <div class="icon">
+                  <img src="/assets/img/ico-build.png" width="50" height="50">
+                </div>
+              </div>
+              <p data-equalizer-watch>
+                Because most of the work is done on the front-end at our factory, (windows, drywall, tiling, bathrooms, etc.), site-work is unobtrusive, intuitive, and quick. Inspectors on-site from the local housing authority will check the utility connections, but have no jurisdiction over the modular components already inspected at the factory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="quote">
+      <div class=grid-container>
+        <div class="grid-x grid-padding-x">
+          <div class="cell large-10 large-offset-1 text-center">
+            <div class="quote">
+              <img src="/assets/img/quote.png" width="792" height="220" alt="Everyone deserves a beautifully designed, quality-built home that makes them feel secure. - by Max Azria">
+              <span class="hide">
+                "Everyone deserves a beautifully designed, quality-built home that makes them feel secure."
+                <cite>by Max Azria</cite>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projects">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="cell large-10 large-offset-1 section-title">
+            <h2>Why Modular?<h2>
+          </div>
+          <div class="cell large-10 large-offset-1">
+            <p class="lead">To make an impact on affordable housing that communities can feel across the nation, developers must create quality living spaces faster than ever before, without costs running through roof — things that have all been until now, mutually exclusive. Modular is nothing new, but the capacity and volume in which HBG is able to deliver thousands of affordable units a year, is truly revolutionary.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="owl-carousel projects-carousel" role="region" aria-label="Design. Manufacture. Build.">
+        <div>
+          <div class="owl-image">
+            <img src="/assets/img/projects-alvarado-3.jpg" alt="clear">
+          </div>
+          <div class="owl-caption">
+            <h3>Hope on Alvarado</h3> 
+            <h4>Los Angeles, CA</h4> 
+            <p class="data"><strong>Address:</strong> 166 S Alvarado Street<br/> 
+              <strong>Proprietary Modules:</strong> 168<br/>
+              <strong>Units:</strong> 84<br/>  
+              <strong>Start Date:</strong> Late 2018<br/> 
+              <strong>Completion Date:</strong> Fall 2019<br/>
+            </p>
+            <p>
+              After recognized for being on the forefront of innovation, HBG was chosen to take over the manufacturing and on-site construction for Hope on Alvarado, which was previously slated for completion this year. Designed by KTGY and developed by The Mullholland Group, it will provide much-needed permanent housing for those experiencing chronic homelessness in Los Angeles.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="owl-image">
+            <img src="/assets/img/projects-bronson-2.jpg" alt="clear">
+          </div>
+          <div class="owl-caption">
+            <h3>Bronson Apartments</h3> 
+            <h4>Los Angeles, CA</h4> 
+            <p class="data"><strong>Address:</strong> 1139 N Bronson Ave<br/> 
+              <strong>Proprietary Modules:</strong> 24<br/>
+              <strong>Units:</strong> 8<br/>  
+              <strong>Start Date:</strong> Late 2018<br/> 
+              <strong>Completion Date:</strong> Summer 2019<br/>
+            </p>
+            <p>
+              Bronson Apartments will provide 8 market-rate apartments in the Hollywood Area.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="owl-image">
+            <img src="/assets/img/projects-vernon-2.jpg" alt="clear">
+          </div>
+          <div class="owl-caption">
+            <h3>Vernon, CA</h3> 
+            <h4>Los Angeles, CA</h4> 
+            <p class="data">
+              <strong>Proprietary Modules:</strong> 4<br/>
+              <strong>Single Family Home</strong><br/>
+            </p>
+            <p>
+              The prototype located at our offices in Vernon, gave us a chance to run through the logistics of shipping and constructing a home. It also allows customers to see our internationally sourced finishes and connections, as well as confirm that the “feel” of the modular home is no different than what you would expect—it feels like home.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+    </section>
+    
+    <section id="news">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x entry-row">
+          <div class="cell medium-8 large-6 medium-offset-2 large-offset-3">
+            <div class="entry">
+              <a href="#" title="" class="image" style="background-image: url('/assets/img/hero-1.jpg')";>
+                <img src="/assets/img/holder.gif" alt="Transparent Image" width="200" height="100">
+              </a>
+              <a href="http://ktgy.com/hope-on-alvarado-l-a-s-first-shipping-container-complex-for-the-homeless-on-its-way/" title="Read about Hope on Alvarado"><h4>Hope on Alvarado – L.A.’s first shipping container complex for the homeless</h4></a>
+              <p><strong>Post Online Media</strong>
+
+              <p>October 4, 2017</p>
+
+              <p>The building, west of downtown in the Westlake District of Los Angeles (166 S. Alvarado Street), is moving quickly through the development process and is slated to begin a six-month construction period in the first part of 2018.</p>
+
+              <p>The accelerated construction is due to a unique design incorporating shipping containers as a primary building material....</p>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <footer id="contact" class="text-center">
+      
+      <div class="contact">
+        <h5>HBG Contruction Corp</h5>
+        <p>
+          Email: <a href="mailto:info@azriahome.com" title="Email Us">info@azriahome.com</a> &nbsp;|&nbsp; <a href="tel:+18582208790" title="Call us at .858.220.8790">1.858.220.8790</a> &nbsp;|&nbsp; <a href="https://goo.gl/maps/3dnJ2kixoNs" alt="Google Map Us">2761 Fruitland Ave. Vernon CA, 90058</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="assets/js/what-input.js"></script>
+    <script src="assets/js/foundation.js"></script>
+    <script src="/assets/js/jquery.waypoints.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/min/app-min.js"></script>
+
+    
   </body>
 </html>
